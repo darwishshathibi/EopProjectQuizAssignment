@@ -1,0 +1,12 @@
+The rate of change of charge is 800 coulombs in 1 second
+The rate of change of power is 800 watts in 1 second
+The rate of change of current is 800 amperes.
+The rate of change of energy 800 joules.
+both involve NAD
+both involve substrate level phosphorylation
+both involve photons
+both involve proton gradients
+Combustion of ethanol
+Fermentation of glucose
+Oxidation of magnesium
+Precipitation of silver chloride
