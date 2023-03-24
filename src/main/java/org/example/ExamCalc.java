@@ -5,7 +5,8 @@ public class ExamCalc {
     static String[] student_name;
     static int[] mark;
     static int num_student;
-    static int minCount;
+    static int minCount = 0;
+    static int maxCount = 0;
 
     public static void main(String[] args) {
         System.out.println("*******************************************************\nMARKS EXAM CALCULATOR\n*******************************************************");
@@ -36,34 +37,36 @@ public class ExamCalc {
         MarkSearch(mark);
 
         System.out.println("\nStudents who get the highest mark "+MaxNumber()+" is/are");
-        System.out.println("\nTotal student/s who get the highest mark = "+ MarkSearch(MaxNumber()));
+        MarkSearch(MaxNumber());
+        System.out.println("\nTotal student/s who get the highest mark = "+ --maxCount);
 
         System.out.println("\nStudents who get the lowest mark "+MinNumber()+" is/are");
         MarkSearch(MinNumber());
-        System.out.println("\nTotal student/s who get the lowest mark = "+ minCount);
+        System.out.println("\nTotal student/s who get the lowest mark = "+ --minCount);
     }
-    static int MarkSearch(int find_mark){
+    static void MarkSearch(int find_mark){
+        //show who achieved highest or lowest mark and find specific mark
         int k = 0;
         for (int i = 0; i < num_student; i++) {
             if (mark[i] == find_mark){
                 System.out.println(++k +". Name "+student_name[i]+" Index location "+ i);
             }
-
         }
-        return k;
     }
     static int MaxNumber(){
         int max = mark[0];
+        //check how many highest mark
         for (int i = 0; i < mark.length; i++) {
-            if (mark[i] > max)
-                max = mark[i];
+            if (mark[i] == max)
+                maxCount++;
+        }
+        //find the highest mark
+        for (int j : mark) {
+            if (j > max) {
+                max = j;
+            }
         }
         return max;
-//        for (int j : mark) {
-//            if (j > max) {
-//                max = j;
-//            }
-//        }
     }
     static int MinNumber() {
         int min = mark[0];
